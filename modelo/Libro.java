@@ -1,4 +1,5 @@
 package modelo;
+import modelo.LibroColeccion;
 
 public class Libro 
 {
@@ -15,25 +16,25 @@ public class Libro
     // --------------
     private String nombre;
     private String autor;
-    private int anioEdicion;
+    private String autor2;
+    private String anioEdicion;
     private boolean edicionLujo;
     private String nombreColeccion;
-    private int numeroColeccion;
+    private String numeroColeccion;
 
 
     // -----------------
     // | CONSTRUCTORES |
     // -----------------
-    public Libro(String nombre, String autor, int anioEdicion, boolean edicionLujo, String nombreColeccion, int numeroColeccion) 
+    public Libro(String nombre, String autor, String anioEdicion2, boolean edicionLujo, String nombreColeccion) 
     {
         this.nombre = nombre;
         this.autor = autor;
-        this.anioEdicion = anioEdicion;
+        this.anioEdicion = anioEdicion2;
         this.edicionLujo = edicionLujo;
         this.nombreColeccion = nombreColeccion;
-        this.numeroColeccion = numeroColeccion;
+ 
     }
-
 
     public String getNombre() {
         return nombre;
@@ -55,12 +56,12 @@ public class Libro
     }
 
 
-    public int getAnioEdicion() {
+    public String getAnioEdicion() {
         return anioEdicion;
     }
 
 
-    public void setAnioEdicion(int anioEdicion) {
+    public void setAnioEdicion(String anioEdicion) {
         this.anioEdicion = anioEdicion;
     }
 
@@ -70,9 +71,10 @@ public class Libro
     }
 
 
-    public String setEdicionLujo(boolean edicionLujo) {
+    public void setEdicionLujo(boolean edicionLujo) {
         this.edicionLujo = edicionLujo;
-        return "Edicion de lujo";
+
+      
     }
 
 
@@ -83,7 +85,7 @@ public class Libro
     @Override
     public String toString() 
     {
-        return "Libro"+ "\n"+ "  nombre = " + nombre + "\n "+" autor = " + autor + "\n "+ " anioEdicion=" + anioEdicion +"\n "+  " edicionLujo=" + edicionLujo + "\n "+ " nombreColeccion=" + nombreColeccion + "\n "+ " numeroColeccion=" + numeroColeccion ;
+        return "Libro"+ "\n"+ "  nombre = " + nombre + "\n "+" autor = " + autor + "\n "+ " anioEdicion=" + anioEdicion +"\n "+  " edicionLujo=" + edicionLujo + "\n "+ " nombreColeccion=" + nombreColeccion + "\n ";
     }
 
 

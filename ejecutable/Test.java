@@ -1,15 +1,44 @@
 package ejecutable;
-
+import java.util.Scanner;
 import modelo.Libro;
 
-public class Test 
+public class Test
 {
-    public static void main(String[] args) 
-    {
-        //Mostar los datos del libro
-        Libro libro = new Libro("El señor de los anillos", "J.R.R. Tolkien", 1954, false, "La Comunidad del Anillo", 1);
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("\nPor favor ingrese los siguientes datos del libro:\n");
+
+        System.out.print("Título: ");
+        String nombre = scanner.nextLine();
+
+        System.out.print("Autor principal: ");
+        String autor = scanner.nextLine();
+
+
+        System.out.print("Año de edición: ");
+        String anioEdicion = scanner.nextLine();
+
+        System.out.print("Nombre coleccion: ");
+        String nombreColeccion = scanner.nextLine();
+
+        System.out.print("Numero coleccion: ");
+        String numeroColeccion = scanner.nextLine();
+
+        System.out.print("Es de lujo? (si/no): ");
+        String deLujoStr = scanner.nextLine();
+        Boolean edicionLujo = deLujoStr.equalsIgnoreCase("si");
+
+
+
+        // Crear instancia del libro con los datos recogidos
+        Libro libro = new Libro(nombre, autor, anioEdicion, edicionLujo, nombreColeccion);
+
+        // Mostrar los datos del libro creado
+        System.out.println("\nSe ha creado el libro:");
         System.out.println(libro.toString());
 
-
+        scanner.close();
     }
 }
